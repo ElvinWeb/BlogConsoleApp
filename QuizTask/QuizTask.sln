@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizTask", "QuizTask\QuizTask.csproj", "{C00E6663-958C-4E48-A399-A7625804A89D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C00E6663-958C-4E48-A399-A7625804A89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00E6663-958C-4E48-A399-A7625804A89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00E6663-958C-4E48-A399-A7625804A89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00E6663-958C-4E48-A399-A7625804A89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C3B4804-4C61-44CC-BBB3-812A5D2FFBAB}
+	EndGlobalSection
+EndGlobal
