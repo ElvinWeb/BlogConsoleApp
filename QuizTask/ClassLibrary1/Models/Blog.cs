@@ -33,11 +33,7 @@ namespace ClassLibrary1.Models
         }
         public void ShowInfo()
         {
-            Console.WriteLine($"{Title} - {Description} - {BlogType}");
-        }
-        public override string ToString()
-        {
-            return $"{Title} - {Description} - {BlogType}";
+            Console.WriteLine($"Basliq:{Title} -> Tesviri:{Description} -> Movzusu:{BlogType}");
         }
     }
 }

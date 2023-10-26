@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,32 @@ namespace ClassLibrary1.Models
 
         public static void Register(string name, string surname, string password)
         {
-            BlogDataBase.Users.Add(new User(name, surname, password));
+
+            if (string.IsNullOrWhiteSpace(name) || name.Any(char.IsDigit))
+            {
+                throw new InvalidNameException();
+            }
+
+            if (string.IsNullOrWhiteSpace(surname) || surname.Any(char.IsDigit))
+            {
+                throw new InvalidSurNameException();
+            }
+
+            if (password.Length < 8 || !password.Any(char.IsDigit) || !char.IsUpper(password[0]))
+            {
+                throw new InvalidPasswordException();
+            }
+
+            string username = $"{name.ToLower()}.{surname.ToLower()}";
+            User newUser = new User
+            {
+                Name = name,
+                Surname = surname,
+                Username = username,
+                Password = password
+            };
+
+            BlogDataBase.Users.Add(newUser);
         }
 
         public static bool Login(string username, string password)
@@ -21,15 +47,9 @@ namespace ClassLibrary1.Models
                 return false;
             }
 
-            foreach (User user in BlogDataBase.Users)
-            {
-                if (user.Password.ToLower() == password.ToLower() && user.Username.ToLower() == username.ToLower())
-                {
-                    return true;
-                }
+            User user = BlogDataBase.Users.FirstOrDefault(user => user.Username == username && user.Password == password);
 
-            }
-            return false;
+            return user != null;
         }
     }
 }

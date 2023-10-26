@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1.Exceptions
 {
-    internal class InvalidPasswordException : Exception
+    public class InvalidPasswordException : Exception
 
     {
         public InvalidPasswordException()
         {
-                
+
         }
 
         public InvalidPasswordException(string msg) : base(msg)
-             
+
         {
 
         }

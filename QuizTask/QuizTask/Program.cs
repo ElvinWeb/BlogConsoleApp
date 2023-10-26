@@ -1,4 +1,5 @@
 ﻿using ClassLibrary1.Enums;
+using ClassLibrary1.Exceptions;
 using ClassLibrary1.Models;
 using System.Xml.Linq;
 
@@ -12,6 +13,7 @@ namespace QuizTask
             bool loginCheck = false;
             do
             {
+                Console.WriteLine("<===== Menu =====> ");
                 Console.WriteLine("1.Register");
                 Console.WriteLine("2.Login");
 
@@ -27,8 +29,25 @@ namespace QuizTask
 
                         Console.Write("password elave et: ");
                         string inputPassword = Console.ReadLine();
+                        try
+                        {
+                            UserService.Register(inputName.Trim(), inputSurname.Trim(), inputPassword.Trim());
+                            Console.WriteLine("Qeydiyyat Ugurla tamamlandi)");
 
-                        UserService.Register(inputName.Trim(), inputSurname.Trim(), inputPassword.Trim());
+                        }
+                        catch (InvalidNameException)
+                        {
+                            Console.WriteLine("Ad deyeri yalnisdir!!!");
+                        }
+                        catch (InvalidSurNameException)
+                        {
+                            Console.WriteLine("Soyad deyeri yalnisdir!!!");
+                        }
+                        catch (InvalidPasswordException)
+                        {
+                            Console.WriteLine("Password deyeri yalnisdir!!!");
+                        }
+
                         break;
                     case "2":
 
@@ -44,108 +63,119 @@ namespace QuizTask
                         } while (!loginCheck);
                         break;
                 }
-
-
             } while (choice == "1");
 
             if (loginCheck)
             {
-                string blogChoice;
-                do
-                {
-
-                    Console.WriteLine("Emeliyyat sec: ");
-                    Console.WriteLine("\n1.Blog elave et" +
-                        "\n2.Blog sil" +
-                        "\n3.Blog detail " +
-                        "\n4.Butun bloglara bax" +
-                        "\n5.Bloglari filterle" +
-                        "\n0.Proqramı bitir");
-
-                    blogChoice = Console.ReadLine();
-                    switch (blogChoice)
-                    {
-                        case "1":
-                            Console.Write("Basligi elave edin: ");
-                            string title = Console.ReadLine();
-
-                            Console.Write("Description elave edin: ");
-                            string desc = Console.ReadLine();
-
-                            Console.WriteLine("Blog Type elave edin");
-                            Console.WriteLine("1 - Programming, 2 - Educational, 3 - Thriller");
-
-                            BlogType blogType = BlogType.Programming;
-                            string type;
-                            type = Console.ReadLine();
-
-                            switch (type)
-                            {
-                                case "1":
-                                    blogType = BlogType.Educational;
-                                    break;
-                                case "2":
-                                    blogType = BlogType.Educational;
-                                    break;
-                                case "3":
-                                    blogType = BlogType.Thriller;
-                                    break;
-                                default:
-                                    Console.WriteLine("bele blog type yoxdur");
-                                    break;
-                            }
-                            BlogService.AddBlog(new Blog(title.Trim(), desc.Trim(), blogType));
-                            break;
-                        case "2":
-                            string removeStr;
-                            int numRemoveId;
-
-                            do
-                            {
-                                Console.Write("Id daxil edin: ");
-                                removeStr = Console.ReadLine();
-
-                            } while (!int.TryParse(removeStr, out numRemoveId));
-                            BlogService.RemoveBlog(numRemoveId);
-                            break;
-                        case "3":
-                            string getStr;
-                            int getId;
-
-                            do
-                            {
-                                Console.Write("Id daxil edin: ");
-                                getStr = Console.ReadLine();
-
-                            } while (!int.TryParse(getStr, out getId));
-
-                            BlogService.GetBlogById(getId).ShowInfo();
-
-                            break;
-                        case "4":
-                            var allBlogs = BlogService.GetAllBlogs();
-                            foreach (Blog blog in allBlogs)
-                            {
-                                blog.ShowInfo();
-                            }
-                            break;
-                        case "5":
-                            Console.Write("axtaris ucun deyer daxil edin: ");
-                            string searchVal = Console.ReadLine();
-
-                            var getBlogsByValue = BlogService.GetBlogsByValue(searchVal.Trim());
-                            foreach (var blog in getBlogsByValue)
-                            {
-                                blog.ShowInfo();
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-
-                } while (blogChoice != "0");
+                BlogMenuSection();
+            }
+            else
+            {
+                Console.WriteLine("Username ve passworda sehvlik var!!!");
             }
 
+        }
+        static void BlogMenuSection()
+        {
+            string blogChoice;
+            do
+            {
+
+                Console.WriteLine("<==== Blog Menu =====> ");
+                Console.WriteLine("Emeliyyat sec: ");
+                Console.WriteLine("\n1.Blog elave et" +
+                    "\n2.Blog sil" +
+                    "\n3.Blog detail " +
+                    "\n4.Butun bloglara bax" +
+                    "\n5.Bloglari filterle" +
+                    "\n0.Proqramı bitir");
+
+                blogChoice = Console.ReadLine();
+                switch (blogChoice)
+                {
+                    case "1":
+                        Console.Write("Basligi elave edin: ");
+                        string title = Console.ReadLine();
+
+                        Console.Write("Description elave edin: ");
+                        string desc = Console.ReadLine();
+
+                        Console.WriteLine("Blog Type secin");
+                        Console.WriteLine("1 - Programming, 2 - Educational, 3 - Thriller");
+
+                        BlogType blogType = BlogType.Programming;
+                        string type;
+                        type = Console.ReadLine();
+
+                        switch (type)
+                        {
+                            case "1":
+                                blogType = BlogType.Educational;
+                                break;
+                            case "2":
+                                blogType = BlogType.Educational;
+                                break;
+                            case "3":
+                                blogType = BlogType.Thriller;
+                                break;
+                            default:
+                                Console.WriteLine("Bele blog type yoxdur");
+                                break;
+                        }
+                        BlogService.AddBlog(new Blog(title.Trim(), desc.Trim(), blogType));
+                        Console.WriteLine("Blog Ugurla elave edildi");
+                        break;
+                    case "2":
+                        string removeStr;
+                        int numRemoveId;
+
+                        do
+                        {
+                            Console.Write("Id daxil edin: ");
+                            removeStr = Console.ReadLine();
+
+                        } while (!int.TryParse(removeStr, out numRemoveId));
+                        BlogService.RemoveBlog(numRemoveId);
+                        Console.WriteLine("Verilmis Id gore Blog silindi!");
+                        break;
+                    case "3":
+                        string getStr;
+                        int getId;
+
+                        do
+                        {
+                            Console.Write("Id daxil edin: ");
+                            getStr = Console.ReadLine();
+
+                        } while (!int.TryParse(getStr, out getId));
+
+                        BlogService.GetBlogById(getId).ShowInfo();
+
+                        break;
+                    case "4":
+                        List<Blog> allBlogs = BlogService.GetAllBlogs();
+                        IterateBlogsArr(allBlogs);
+                        break;
+                    case "5":
+                        Console.Write("Axtaris ucun deyer daxil edin: ");
+                        string searchVal = Console.ReadLine();
+
+                        List<Blog> getBlogsByValue = BlogService.GetBlogsByValue(searchVal.Trim());
+                        IterateBlogsArr(getBlogsByValue);
+                        break;
+                    default:
+                        break;
+                }
+
+            } while (blogChoice != "0");
+
+        }
+        static void IterateBlogsArr(List<Blog> blogsArr)
+        {
+            foreach (var blog in blogsArr)
+            {
+                blog.ShowInfo();
+            }
         }
     }
 }

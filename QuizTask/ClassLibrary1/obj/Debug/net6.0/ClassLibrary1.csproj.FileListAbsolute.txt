@@ -10,3 +10,14 @@ C:\Users\II novbe\Documents\Tasks\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassL
 C:\Users\II novbe\Documents\Tasks\QuizTask\ClassLibrary1\obj\Debug\net6.0\refint\ClassLibrary1.dll
 C:\Users\II novbe\Documents\Tasks\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.pdb
 C:\Users\II novbe\Documents\Tasks\QuizTask\ClassLibrary1\obj\Debug\net6.0\ref\ClassLibrary1.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.deps.json
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\bin\Debug\net6.0\ClassLibrary1.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.AssemblyInfoInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.AssemblyInfo.cs
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\refint\ClassLibrary1.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ClassLibrary1.pdb
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\ClassLibrary1\obj\Debug\net6.0\ref\ClassLibrary1.dll
