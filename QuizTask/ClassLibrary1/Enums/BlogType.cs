@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1.Enums
+namespace ClassLibrary.Enums
 {
     public enum BlogType
     {

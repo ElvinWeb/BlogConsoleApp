@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ClassLibrary.Models.MainClasses;
 
-namespace ClassLibrary1.Models
+namespace ClassLibrary.Models.DataBase
 {
     public static class BlogDataBase
     {

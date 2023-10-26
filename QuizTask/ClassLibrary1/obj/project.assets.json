@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BlogConsoleApp\\QuizTask\\ClassLibrary1\\ClassLibrary1.csproj",
-      "projectName": "ClassLibrary1",
-      "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BlogConsoleApp\\QuizTask\\ClassLibrary1\\ClassLibrary1.csproj",
+      "projectUniqueName": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BlogConsoleApp\\QuizTask\\ClassLibrary1\\ClassLibrary.csproj",
+      "projectName": "ClassLibrary",
+      "projectPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BlogConsoleApp\\QuizTask\\ClassLibrary1\\ClassLibrary.csproj",
       "packagesPath": "C:\\Users\\elvin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\elvin\\OneDrive\\Documents\\Sənədlər\\ForFuture-tasks\\BlogConsoleApp\\QuizTask\\ClassLibrary1\\obj\\",
       "projectStyle": "PackageReference",

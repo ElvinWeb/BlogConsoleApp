@@ -21,8 +21,6 @@ C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\Qui
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\QuizTask.runtimeconfig.json
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\QuizTask.dll
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\QuizTask.pdb
-C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\ClassLibrary1.dll
-C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\ClassLibrary1.pdb
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\obj\Debug\net6.0\QuizTask.csproj.AssemblyReference.cache
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\obj\Debug\net6.0\QuizTask.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\obj\Debug\net6.0\QuizTask.AssemblyInfoInputs.cache
@@ -34,3 +32,5 @@ C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\Qui
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\obj\Debug\net6.0\QuizTask.pdb
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\obj\Debug\net6.0\QuizTask.genruntimeconfig.cache
 C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\obj\Debug\net6.0\ref\QuizTask.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\ClassLibrary.dll
+C:\Users\elvin\OneDrive\Documents\Sənədlər\ForFuture-tasks\BlogConsoleApp\QuizTask\QuizTask\bin\Debug\net6.0\ClassLibrary.pdb

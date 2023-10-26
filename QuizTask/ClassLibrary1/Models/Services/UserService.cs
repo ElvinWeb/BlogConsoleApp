@@ -1,11 +1,13 @@
-﻿using ClassLibrary1.Exceptions;
+﻿using ClassLibrary.Exceptions;
+using ClassLibrary.Models.DataBase;
+using ClassLibrary.Models.MainClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1.Models
+namespace ClassLibrary.Models.Services
 {
     public static class UserService
     {
@@ -15,20 +17,21 @@ namespace ClassLibrary1.Models
 
             if (string.IsNullOrWhiteSpace(name) || name.Any(char.IsDigit))
             {
-                throw new InvalidNameException();
+                throw new InvalidNameException("Ad deyeri sehvdir!!");
             }
 
             if (string.IsNullOrWhiteSpace(surname) || surname.Any(char.IsDigit))
             {
-                throw new InvalidSurNameException();
+                throw new InvalidSurNameException("Soyad deyeri sehvdir!!");
             }
 
-            if (password.Length < 8 || !password.Any(char.IsDigit) || !char.IsUpper(password[0]))
+            if (password.Length < 8 || !password.Any(char.IsDigit) || !char.IsUpper(password[0]) || string.IsNullOrWhiteSpace(password))
             {
-                throw new InvalidPasswordException();
+                throw new InvalidPasswordException("Password deyeri sehvdir!!");
             }
 
             string username = $"{name.ToLower()}.{surname.ToLower()}";
+
             User newUser = new User
             {
                 Name = name,
@@ -46,7 +49,6 @@ namespace ClassLibrary1.Models
             {
                 return false;
             }
-
             User user = BlogDataBase.Users.FirstOrDefault(user => user.Username == username && user.Password == password);
 
             return user != null;

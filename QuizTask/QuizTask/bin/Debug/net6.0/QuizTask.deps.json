@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v6.0": {
       "QuizTask/1.0.0": {
         "dependencies": {
-          "ClassLibrary1": "1.0.0"
+          "ClassLibrary": "1.0.0"
         },
         "runtime": {
           "QuizTask.dll": {}
         }
       },
-      "ClassLibrary1/1.0.0": {
+      "ClassLibrary/1.0.0": {
         "runtime": {
-          "ClassLibrary1.dll": {}
+          "ClassLibrary.dll": {}
         }
       }
     }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ClassLibrary1/1.0.0": {
+    "ClassLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

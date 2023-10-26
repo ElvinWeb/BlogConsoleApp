@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuizTask", "QuizTask\QuizTask.csproj", "{C00E6663-958C-4E48-A399-A7625804A89D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizTask", "QuizTask\QuizTask.csproj", "{C00E6663-958C-4E48-A399-A7625804A89D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassLibrary", "ClassLibrary1\ClassLibrary.csproj", "{6D24F5EB-3A51-403D-9F37-AD9F7F7A2C94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

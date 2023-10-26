@@ -1,11 +1,11 @@
-﻿using ClassLibrary1.Enums;
+﻿using ClassLibrary.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary1.Models
+namespace ClassLibrary.Models.MainClasses
 {
     public class Blog
     {
@@ -25,10 +25,10 @@ namespace ClassLibrary1.Models
         public Blog(string title, string desc, BlogType blogType)
         {
             _count++;
-            this.Id = _count;
-            this.Title = title;
-            this.Description = desc;
-            this.BlogType = blogType;
+            Id = _count;
+            Title = title;
+            Description = desc;
+            BlogType = blogType;
 
         }
         public void ShowInfo()

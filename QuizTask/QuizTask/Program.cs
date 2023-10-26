@@ -1,6 +1,7 @@
-﻿using ClassLibrary1.Enums;
-using ClassLibrary1.Exceptions;
-using ClassLibrary1.Models;
+﻿using ClassLibrary.Enums;
+using ClassLibrary.Exceptions;
+using ClassLibrary.Models.MainClasses;
+using ClassLibrary.Models.Services;
 using System.Xml.Linq;
 
 namespace QuizTask
@@ -9,71 +10,11 @@ namespace QuizTask
     {
         static void Main(string[] args)
         {
-            string choice;
-            bool loginCheck = false;
-            do
-            {
-                Console.WriteLine("<===== Menu =====> ");
-                Console.WriteLine("1.Register");
-                Console.WriteLine("2.Login");
-
-                choice = Console.ReadLine();
-                switch (choice)
-                {
-                    case "1":
-                        Console.Write("name elave et: ");
-                        string inputName = Console.ReadLine();
-
-                        Console.Write("surname elave et: ");
-                        string inputSurname = Console.ReadLine();
-
-                        Console.Write("password elave et: ");
-                        string inputPassword = Console.ReadLine();
-                        try
-                        {
-                            UserService.Register(inputName.Trim(), inputSurname.Trim(), inputPassword.Trim());
-                            Console.WriteLine("Qeydiyyat Ugurla tamamlandi)");
-
-                        }
-                        catch (InvalidNameException)
-                        {
-                            Console.WriteLine("Ad deyeri yalnisdir!!!");
-                        }
-                        catch (InvalidSurNameException)
-                        {
-                            Console.WriteLine("Soyad deyeri yalnisdir!!!");
-                        }
-                        catch (InvalidPasswordException)
-                        {
-                            Console.WriteLine("Password deyeri yalnisdir!!!");
-                        }
-
-                        break;
-                    case "2":
-
-                        do
-                        {
-                            Console.WriteLine("username elave et: ");
-                            string inputUsername = Console.ReadLine();
-
-                            Console.WriteLine("password elave et: ");
-                            string inputPass = Console.ReadLine();
-                            loginCheck = UserService.Login(inputUsername.Trim(), inputPass.Trim());
-
-                        } while (!loginCheck);
-                        break;
-                }
-            } while (choice == "1");
-
-            if (loginCheck)
-            {
-                BlogMenuSection();
-            }
-            else
-            {
-                Console.WriteLine("Username ve passworda sehvlik var!!!");
-            }
-
+            AppStart();
+        }
+        static void AppStart()
+        {
+            BlogRegisterSection();
         }
         static void BlogMenuSection()
         {
@@ -135,8 +76,16 @@ namespace QuizTask
                             removeStr = Console.ReadLine();
 
                         } while (!int.TryParse(removeStr, out numRemoveId));
+                        try
+                        {
+
                         BlogService.RemoveBlog(numRemoveId);
-                        Console.WriteLine("Verilmis Id gore Blog silindi!");
+                        }
+                        catch(BlogNotFoundException ex)
+                        {
+                           Console.WriteLine($"{ex.Message}");
+                        }
+                       
                         break;
                     case "3":
                         string getStr;
@@ -168,6 +117,75 @@ namespace QuizTask
                 }
 
             } while (blogChoice != "0");
+
+        }
+        static void BlogRegisterSection()
+        {
+            string choice;
+            do
+            {
+                Console.WriteLine("<===== Menu =====> ");
+                Console.WriteLine("1.Register");
+                Console.WriteLine("2.Login");
+
+                choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        Console.Write("Name elave et: ");
+                        string inputName = Console.ReadLine();
+
+                        Console.Write("Surname elave et: ");
+                        string inputSurname = Console.ReadLine();
+
+                        Console.Write("Password elave et: ");
+                        string inputPassword = Console.ReadLine();
+                        try
+                        {
+                            UserService.Register(inputName.Trim(), inputSurname.Trim(), inputPassword.Trim());
+                            Console.WriteLine("Qeydiyyat Ugurla tamamlandi)");
+
+                        }
+                        catch (InvalidNameException ex)
+                        {
+                            Console.WriteLine($"{ex.Message}");
+                        }
+                        catch (InvalidSurNameException ex)
+                        {
+                            Console.WriteLine($"{ex.Message}");
+                        }
+                        catch (InvalidPasswordException ex)
+                        {
+                            Console.WriteLine($"{ex.Message}");
+                        }
+
+                        break;
+                    case "2":
+                        bool loginCheck = false;
+                        do
+                        {
+                            Console.WriteLine("username elave et: ");
+                            string inputUsername = Console.ReadLine();
+
+                            Console.WriteLine("password elave et: ");
+                            string inputPass = Console.ReadLine();
+                            loginCheck = UserService.Login(inputUsername.Trim(), inputPass.Trim());
+
+                            if (loginCheck)
+                            {
+                                BlogMenuSection();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Username ve passworda sehvlik var!!!");
+                            }
+
+                        } while (!loginCheck);
+                        break;
+                    default:
+                        break;
+                }
+            } while (choice == "1");
 
         }
         static void IterateBlogsArr(List<Blog> blogsArr)
