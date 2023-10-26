@@ -51,7 +51,7 @@ namespace QuizTask
                         switch (type)
                         {
                             case "1":
-                                blogType = BlogType.Educational;
+                                blogType = BlogType.Programming;
                                 break;
                             case "2":
                                 blogType = BlogType.Educational;
